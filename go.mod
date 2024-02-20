@@ -1,4 +1,4 @@
-module github.com/moofMonkey/quic-wget
+module quic-wget
 
 go 1.21
 
