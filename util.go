@@ -84,9 +84,10 @@ func transferFile(conn io.ReadWriter, localPath string, download bool) {
 			log.Fatalln("Failed to transfer file", err)
 		}
 	} else {
+		log.Println("Transfer file:", localPath)
 		f, err := os.Open(localPath)
 		if err != nil {
-			log.Fatalln("Failed to open file", localPath, err)
+			log.Println("Failed to open file", localPath, err)
 			return
 		}
 		defer f.Close()
@@ -103,7 +104,7 @@ func transferFile(conn io.ReadWriter, localPath string, download bool) {
 		}
 
 		if _, err = io.CopyN(conn, f, stat.Size()); err != nil {
-			log.Fatalln("Failed to transfer file", err)
+			log.Println("Failed to transfer file", err)
 		}
 	}
 }
