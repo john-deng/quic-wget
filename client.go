@@ -3,7 +3,7 @@ package main
 import (
 	"context"
 	"crypto/tls"
-	"github.com/lucas-clemente/quic-go"
+	"github.com/quic-go/quic-go"
 	"io"
 	"log"
 	"time"
@@ -23,7 +23,7 @@ func runClient(target, password, remotePath, localPath string, reverse, tcp bool
 		var conf quic.Config
 		conf.HandshakeIdleTimeout = dur
 		conf.MaxIdleTimeout = dur
-		session, err := quic.DialAddrContext(ctx, target, tlsConf, &conf)
+		session, err := quic.DialAddr(ctx, target, tlsConf, &conf)
 		if err != nil {
 			log.Fatalln(err)
 		}
