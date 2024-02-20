@@ -12,8 +12,8 @@ func main() {
 	var localPath string
 	var reverse bool
 	var tcp bool
-	flag.StringVar(&target, "target", "127.0.0.1:58993", "Target IP:Port")
-	flag.StringVar(&password, "password", "", "Password for specified target")
+	flag.StringVar(&target, "target", "0.0.0.0:32100", "Target IP:Port")
+	flag.StringVar(&password, "password", "passw0rd", "Password for specified target")
 	flag.StringVar(&downloadPath, "downloadPath", "", "Path to be downloaded")
 	flag.StringVar(&localPath, "localPath", "", "Path where file will be stored")
 	flag.BoolVar(
